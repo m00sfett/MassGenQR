@@ -17,15 +17,18 @@ The tool focuses on dependable bulk generation of printer-ready sheets:
 MassGenQR requires Python 3.10 or newer.
 
 ```bash
-pip install massgenqr
+python -m pip install .
 ```
 
 If you are working from a clone of this repository you can install the project
-in editable mode:
+in editable mode as well:
 
 ```bash
-pip install -e .
+python -m pip install -e .
 ```
+
+Because you install directly from the project directory, publishing the
+package on PyPI is not necessary.
 
 ## Usage
 
