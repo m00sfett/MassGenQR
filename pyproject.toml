@@ -8,11 +8,19 @@ version = "0.1.0"
 description = "Generate printable QR label sheets with matching CSV indexes."
 authors = [{name = "MassGenQR Maintainers"}]
 readme = "README.md"
-license = {text = "MIT"}
+license = {file = "LICENSE"}
 requires-python = ">=3.10"
 dependencies = [
     "qrcode[pil]",
     "reportlab",
+]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: OS Independent",
 ]
 
 [project.scripts]
