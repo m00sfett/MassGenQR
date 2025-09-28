@@ -212,6 +212,20 @@ def random_ids(count: int, *, length: int, alphabet: Sequence[str] | str) -> Lis
     seen = set()
     ids: List[str] = []
     alphabet_list = list(alphabet)
+    if not alphabet_list:
+        raise ValueError("alphabet must not be empty")
+    max_identifiers = len(alphabet_list) ** length
+    if count > max_identifiers:
+        raise ValueError(
+            "Cannot generate {count} unique identifiers from an alphabet of size {alphabet_size} "
+            "with identifier length {length}. Maximum distinct identifiers: {max_identifiers}."
+            .format(
+                count=count,
+                alphabet_size=len(alphabet_list),
+                length=length,
+                max_identifiers=max_identifiers,
+            )
+        )
     while len(ids) < count:
         identifier = "".join(choice(alphabet_list) for _ in range(length))
         if identifier in seen:
