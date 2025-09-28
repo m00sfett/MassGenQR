@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=62", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "massgenqr"
+version = "0.1.0"
+description = "Generate printable QR label sheets with matching CSV indexes."
+authors = [{name = "MassGenQR Maintainers"}]
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+dependencies = [
+    "qrcode[pil]",
+    "reportlab",
+]
+
+[project.scripts]
+massgenqr = "massgenqr.cli:main"
